@@ -1,0 +1,67 @@
+$orange: rgba(240, 144, 60, 1);
+$blue: rgba(63, 215, 242, 1);
+$red: rgba(181, 22, 16,1);
+$green-blue: rgba(23, 179, 173, 1);
+$laptop: 720px;
+$desktop: 1024px;
+
+@mixin button() {
+    position: sticky;
+    bottom: 10%;
+    width: fit-content;
+    min-width: 55px;
+    background: $orange;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+@mixin scrollButton() {
+    width: 10vw;
+    height: 10vw;
+    min-width: 0;
+    padding:0;
+    border-radius: 50%;
+    position: sticky;
+    display: none;
+    top: 5%;
+    margin-left: auto;
+    background: $green-blue;
+    transition: all 1s ease;
+    border: 2px solid black;
+    animation: appear 1.5s ease;
+    &:after, &:before{
+        content: '';
+        position: absolute;
+        width: 50%;
+        min-height: 3px;
+        background-color: black;
+        top: 50%;
+        left: 0;
+      }
+      &:after {
+        left: 50%;
+        transform: rotate(45deg) translateX(-25%);
+      }
+      &:before {
+        transform: rotate(-45deg) translateX(25%);
+      }
+}
+
+@keyframes appear{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
